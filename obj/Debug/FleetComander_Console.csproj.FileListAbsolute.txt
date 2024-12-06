@@ -1,0 +1,7 @@
+C:\Users\aruen\OneDrive\바탕 화면\ED\FleetComander_Console\bin\Debug\FleetComander_Console.exe.config
+C:\Users\aruen\OneDrive\바탕 화면\ED\FleetComander_Console\bin\Debug\FleetComander_Console.exe
+C:\Users\aruen\OneDrive\바탕 화면\ED\FleetComander_Console\bin\Debug\FleetComander_Console.pdb
+C:\Users\aruen\OneDrive\바탕 화면\ED\FleetComander_Console\obj\Debug\FleetComander_Console.csproj.AssemblyReference.cache
+C:\Users\aruen\OneDrive\바탕 화면\ED\FleetComander_Console\obj\Debug\FleetComander_Console.csproj.CoreCompileInputs.cache
+C:\Users\aruen\OneDrive\바탕 화면\ED\FleetComander_Console\obj\Debug\FleetComander_Console.exe
+C:\Users\aruen\OneDrive\바탕 화면\ED\FleetComander_Console\obj\Debug\FleetComander_Console.pdb
