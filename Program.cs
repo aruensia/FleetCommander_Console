@@ -104,7 +104,7 @@ namespace FleetComander_Console
             cruiser.attack = 20;
             cruiser.defence = 5;
             cruiser.hp = 200;
-            cruiser.count = 20;
+            cruiser.count = 10;
             cruiser.price = 500;
             //------------
 
