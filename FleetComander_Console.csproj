@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConsoleUiSetting.cs" />
+    <Compile Include="MainMenu.cs" />
     <Compile Include="PlaySequence.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

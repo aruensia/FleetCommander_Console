@@ -10,9 +10,14 @@ namespace FleetComander_Console
     {
         public static Ship[] playerFleet = new Ship[3];
         public static Ship[] enemyFleet = new Ship[3];
-        public static PlayerFleet player = new PlayerFleet();
-        public static EnemyFleet enemy = new EnemyFleet();
+        public static BattleFleets battleFleets = new BattleFleets();
+        public static MainMenu mainMenu = new MainMenu();
         public static UserInfo user = new UserInfo();
+        public static ShopSetting shopSetting = new ShopSetting();
+        public static PlaySequence playSequence = new PlaySequence();
+        public static FleetSetting fleetSetting = new FleetSetting();
+        public static BattleSetting battleSetting = new BattleSetting();
+
 
         public static Random attackChance = new Random();
     }
@@ -21,10 +26,7 @@ namespace FleetComander_Console
     {
         public void PlayMode()
         {
-            FleetSetting fleetSetting = new FleetSetting();
-            BattleSetting battleSetting = new BattleSetting();
-            fleetSetting.FleetDefaltSetting();
-            battleSetting.BattleFleid();
+            GameInfo.battleSetting.BattleFleid();
 
             Console.WriteLine("a를 눌러 종료하세요.");
             var a = Console.ReadKey();
@@ -47,8 +49,19 @@ namespace FleetComander_Console
             Console.WriteLine($"{GameInfo.enemyFleet[0].Name} : {GameInfo.enemyFleet[0].UnitCount}");
             Console.WriteLine($"{GameInfo.enemyFleet[1].Name} : {GameInfo.enemyFleet[1].UnitCount}");
             Console.WriteLine($"{GameInfo.enemyFleet[2].Name} : {GameInfo.enemyFleet[2].UnitCount}");
+            Console.WriteLine("a를 눌러 종료하세요.");
 
-            Console.WriteLine("세팅 종료");
+
+
+            a = Console.ReadKey();
+
+            switch (a.Key)
+            {
+                case ConsoleKey.A:
+                    Console.Clear();
+                    GameInfo.mainMenu.SelectListMenu();
+                    break;
+            }
         }
     }
 }
