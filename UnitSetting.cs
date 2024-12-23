@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlTypes;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Runtime;
@@ -31,7 +32,7 @@ namespace FleetComander_Console
 
         }
 
-        public Ship(string name, int attack, int defence, int hp, int unitCount, int price, int screenpiercing, int dac, int cac, int bac)
+        public Ship(string name, int attack, int defence, int hp, int unitCount, int screenpiercing, int price, int dac, int cac, int bac)
         {
             Name = name;
             Attack = attack;
@@ -44,8 +45,6 @@ namespace FleetComander_Console
             CruiserAttackChance = cac;
             BattleshipAttackChance = bac;
         }
-
-
         #region 프로퍼티 모음
         public string Name
         {
@@ -129,7 +128,7 @@ namespace FleetComander_Console
 
     class Dsestroyer : Ship
     {
-        public Dsestroyer(string name, int attack, int defence, int hp, int unitCount, int price, int screenpiercing, int dac, int cac, int bac) : base(name, attack, defence, hp, unitCount, screenpiercing, price, dac, cac, bac)
+        public Dsestroyer(string name, int attack, int defence, int hp, int unitCount, int screenpiercing, int price, int dac, int cac, int bac) : base(name, attack, defence, hp, unitCount, screenpiercing, price, dac, cac, bac)
         {
             
         }
@@ -137,7 +136,7 @@ namespace FleetComander_Console
 
     class Cruiser : Ship
     {
-        public Cruiser(string name, int attack, int defence, int hp, int unitCount, int price, int screenpiercing, int dac, int cac, int bac) : base(name, attack, defence, hp, unitCount, screenpiercing, price, dac, cac, bac)
+        public Cruiser(string name, int attack, int defence, int hp, int unitCount, int screenpiercing, int price, int dac, int cac, int bac) : base(name, attack, defence, hp, unitCount, screenpiercing, price, dac, cac, bac)
         {
 
         }
@@ -145,7 +144,7 @@ namespace FleetComander_Console
 
     class Battleship : Ship
     {
-        public Battleship(string name, int attack, int defence, int hp, int unitCount, int price, int screenpiercing, int dac, int cac, int bac) : base(name, attack, defence, hp, unitCount, screenpiercing, price, dac, cac, bac)
+        public Battleship(string name, int attack, int defence, int hp, int unitCount, int screenpiercing, int price, int dac, int cac, int bac) : base(name, attack, defence, hp, unitCount, screenpiercing, price, dac, cac, bac)
         {
 
         }
@@ -181,19 +180,13 @@ namespace FleetComander_Console
     {
         public void FleetDefaltSetting()
         {
-            GameInfo.playerFleet[0] = new Dsestroyer("유저 구축함", 10, 1, 10, 20, 50, 30, 7, 0, 2);
-            GameInfo.playerFleet[1] = new Cruiser("유저 순양함", 20, 5, 200, 5, 500, 1000, 2, 5, 5);
+            GameInfo.playerFleet[0] = new Dsestroyer("유저 구축함", 10, 1, 10, 10, 50, 30, 7, 0, 2);
+            GameInfo.playerFleet[1] = new Cruiser("유저 순양함", 20, 5, 200, 1, 500, 1000, 2, 5, 5);
             GameInfo.playerFleet[2] = new Battleship("유저 전함", 100, 15, 1000, 0, 30, 3000, 1, 6, 8);
 
-            GameInfo.enemyFleet[0] = new Dsestroyer("적 구축함", 10, 1, 10, 10, 50, 30, 7, 0, 2);
-            GameInfo.enemyFleet[1] = new Cruiser("적 순양함", 20, 5, 200, 10, 500, 30, 2, 5, 5);
+            GameInfo.enemyFleet[0] = new Dsestroyer("적 구축함", 10, 1, 10, 5, 50, 30, 7, 0, 2);
+            GameInfo.enemyFleet[1] = new Cruiser("적 순양함", 20, 5, 200, 1, 500, 30, 2, 5, 5);
             GameInfo.enemyFleet[2] = new Battleship("적 전함", 100, 15, 1000, 0, 3000, 30, 1, 6, 8);
-
-            Console.WriteLine($"플레이어 함대 : {GameInfo.playerFleet[0].Name} / {GameInfo.playerFleet[1].Name} / {GameInfo.playerFleet[2].Name}");
-            Console.WriteLine($"플레이어 함대 : {GameInfo.playerFleet[0].UnitCount} / {GameInfo.playerFleet[1].UnitCount} / {GameInfo.playerFleet[2].UnitCount}");
-            Console.WriteLine("");
-            Console.WriteLine($"적 함대 : {GameInfo.enemyFleet[0].Name} / {GameInfo.enemyFleet[1].Name} / {GameInfo.enemyFleet[2].Name}");
-            Console.WriteLine($"적 함대 : {GameInfo.enemyFleet[0].UnitCount} / {GameInfo.enemyFleet[1].UnitCount} / {GameInfo.enemyFleet[2].UnitCount}");
         }    
     }
 
@@ -211,10 +204,14 @@ namespace FleetComander_Console
         public int[] defenderFleetHp = new int[3];
         public int[] originFleetHp = new int[3];
 
+        public int[] emptyPlayerFleetCount = new int[3];
+        public int[] emptyEnemyFleetCount = new int[3];
+
         public void BattleFleid()
         {
             BattleEngage(userFirst);
             FleetBattle();
+            BattleResult();
         }
 
         public void BattleEngage(bool userFirst)
@@ -249,27 +246,49 @@ namespace FleetComander_Console
             }
         }
 
-        public void EndBattleResult()
+        public void SaveBattleResult(bool userFirst)
         {
             // 전투에 투입했던 함대들을 기존 함대 배열에 넣음
-            for (int i = 0; i < 3; i++)
+            if (userFirst == true)
             {
-                GameInfo.playerFleet[i].UnitCount = attackerFleetCount[i];
-                GameInfo.enemyFleet[i].UnitCount = defenderFleetCount[i];
+                for (int i = 0; i < 3; i++)
+                {
+                    emptyEnemyFleetCount[i] = defenderFleetCount[i];
+                }
+            }
+
+            else if (userFirst == false)
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    emptyPlayerFleetCount[i] = defenderFleetCount[i];
+                }
             }
         }
 
+        public void EndBattleResult()
+        {
+            //턴 종료 시 임시배열에 넣은 함대를 기존 함대 배열에 넣음
+            for(int i = 0; i < 3;i++)
+            {
+                GameInfo.enemyFleet[i].UnitCount = emptyEnemyFleetCount[i];
+                GameInfo.playerFleet[i].UnitCount = emptyPlayerFleetCount[i];
+            }
+        }
 
         public void FleetBattle()
         {
-            int trun = 1;
+            int trun = 0;
 
-            for (int i = 0; i < trun; i++)
+            for (trun = 1; trun < 6; trun++)
             {
+                userFirst = true;
+                Console.WriteLine($"현재 턴 {trun}");
                 Console.WriteLine("----- 유저 차례-----");
                 BattleEngage(userFirst);
                 Console.WriteLine(userFirst);
                 GameInfo.battleFleets.FleetAttack(attackerFleetCount, defenderFleetCount, defenderFleetHp, originFleetHp, fleetType, attackerFleetName, defenderFleetName);
+                SaveBattleResult(userFirst);
 
                 Console.WriteLine();
                 Console.WriteLine("----- 적 차례-----");
@@ -277,25 +296,53 @@ namespace FleetComander_Console
                 BattleEngage(userFirst);
                 Console.WriteLine(userFirst);
                 GameInfo.battleFleets.FleetAttack(attackerFleetCount, defenderFleetCount, defenderFleetHp, originFleetHp, fleetType, attackerFleetName, defenderFleetName);
+                SaveBattleResult(userFirst);
+
                 EndBattleResult();
+                Console.WriteLine("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ턴 종료ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ");
+            }
+        }
+
+        public void BattleResult()
+        {
+            Console.Clear();
+            Console.WriteLine("전투 종료!");
+            Console.WriteLine();
+            Console.WriteLine($"전투 결과는 다음과 같습니다.");
+            Console.WriteLine($"유저 : ");
+            Console.WriteLine($"{GameInfo.playerFleet[0].Name} : {GameInfo.playerFleet[0].UnitCount}");
+            Console.WriteLine($"{GameInfo.playerFleet[1].Name} : {GameInfo.playerFleet[1].UnitCount}");
+            Console.WriteLine($"{GameInfo.playerFleet[2].Name} : {GameInfo.playerFleet[2].UnitCount}");
+
+            Console.WriteLine();
+            Console.WriteLine($"적 : ");
+            Console.WriteLine($"{GameInfo.enemyFleet[0].Name} : {GameInfo.enemyFleet[0].UnitCount}");
+            Console.WriteLine($"{GameInfo.enemyFleet[1].Name} : {GameInfo.enemyFleet[1].UnitCount}");
+            Console.WriteLine($"{GameInfo.enemyFleet[2].Name} : {GameInfo.enemyFleet[2].UnitCount}");
+
+            ConsoleKeyInfo setkey;
+            setkey = Console.ReadKey();
+
+            if (setkey.Key == ConsoleKey.Enter)
+            {
+                Console.Clear();
             }
         }
     }
 
     class BattleFleets
     {
-        public bool ScreenPiercing(int[] defenderFleetCount, int[] attackerFleetCount)
-        {
-            bool isFleetScreenPiercing = false;
+        //public bool ScreenPiercing(int[] defenderFleetCount, int[] attackerFleetCount) ////구축함이 방벽역할을 하는 함수. (공격자 순양함 + 공격자 전함 / 방어자 구축함)
+        //{
+        //    bool isFleetScreenPiercing = false;
 
-            if(defenderFleetCount[0] >= (attackerFleetCount[1] + attackerFleetCount[2]))
-            {
+        //    if(defenderFleetCount[0] >= (attackerFleetCount[1] + attackerFleetCount[2]))
+        //    {
 
-            }
+        //    }
 
-            return isFleetScreenPiercing;
-        }
-
+        //    return isFleetScreenPiercing;
+        //}
 
         public void FleetAttack(int[] attackerFleetCount, int[] defenderFleetCount, int[] defenderFleetHp, int[] originFleetHp, int fleetType, string[] attackerFleetName, string[] defenderFleetName) // 아군 함대가 적의 함대에게 우선 공격을 가함. 공격 후, 공격 찬스 만큼 추가 공격을 가함.
         {
@@ -305,28 +352,28 @@ namespace FleetComander_Console
 
             for (fleetType = 0; fleetType < 3; fleetType++) // 구축함, 순양함, 전함 순으로 공격을 진행함.
             {
-                if (defenderFleetCount[fleetType] <= 0)
+                if (attackerFleetCount[fleetType] <= 0)
                 {
-                    for (int i = 0; i < defenderFleetCount[fleetType]; i++)
+                    for (int i = 0; i < attackerFleetCount[fleetType]; i++)
                     {
                         Console.WriteLine($"적 {defenderFleetName[fleetType]}이 없어, {defenderFleetName[fleetType+1]}으로 변경합니다.");
                         Console.WriteLine($"{defenderFleetName[fleetType+1]} / {defenderFleetCount[fleetType+1]}");
-                        GameInfo.battleFleets.TakeDamage(fleetType + 1, defenderFleetCount, defenderFleetHp, originFleetHp, attackerFleetName, defenderFleetName);
+                        GameInfo.battleFleets.TakeDamage(fleetType + 1, attackerFleetCount, defenderFleetCount, defenderFleetHp, originFleetHp, attackerFleetName, defenderFleetName);
                     }
                 }
 
-                else if (defenderFleetCount[fleetType] > 0)
+                else if (attackerFleetCount[fleetType] > 0)
                 {
-                    for (int i = 0; i < defenderFleetCount[fleetType]; i++)
+                    for (int i = 0; i < attackerFleetCount[fleetType]; i++)
                     {
-                        Console.WriteLine($"{attackerFleetName[fleetType]} / {attackerFleetCount[fleetType]}");
-                        GameInfo.battleFleets.TakeDamage(fleetType, defenderFleetCount, defenderFleetHp, originFleetHp, attackerFleetName, defenderFleetName);
+                       Console.WriteLine($"{attackerFleetName[fleetType]} / {attackerFleetCount[fleetType]}");
+                        GameInfo.battleFleets.TakeDamage(fleetType, attackerFleetCount, defenderFleetCount, defenderFleetHp, originFleetHp, attackerFleetName, defenderFleetName);
                     }
                 }
             }
         }
 
-        public void TakeDamage(int fleetType, int[] defenderFleetCount, int[] defenderFleetHp, int[] originFleetHp, string[] attackerFleetName, string[] defenderFleetName) // 적의 함대에게 피해를 입음.
+        public void TakeDamage(int fleetType,int[] attackerFleetCount,  int[] defenderFleetCount, int[] defenderFleetHp, int[] originFleetHp, string[] attackerFleetName, string[] defenderFleetName) // 적의 함대에게 피해를 입음.
         {
             int setDamage = 0;
             int isOriginHp = 0;
