@@ -12,7 +12,7 @@ namespace FleetComander_Console
     {
         public void GameStart()
         {
-            Console.Clear();
+            GameInfo.consoleUiSetting.ConsoleClear();
             GameInfo.fleetSetting.FleetDefaltSetting();
 
             Console.WriteLine("1 : 게임을 시작하기");
@@ -25,7 +25,7 @@ namespace FleetComander_Console
                     switch (inputNumber)
                     {
                         case 1:
-                            Console.Clear();
+                            GameInfo.consoleUiSetting.ConsoleClear();
                             SelectListMenu();
                             break;
                         case 2:
@@ -54,18 +54,17 @@ namespace FleetComander_Console
             {
                 if (inputNumber == 1)
                 {
-                    Console.Clear();
-                    //GameInfo.shopSetting.ShopList();
-                    GameInfo.shopmenu.ShopSequence();
+                    GameInfo.consoleUiSetting.ConsoleClear();
+                    GameInfo.shopSetting.ShopList();
                 }
                 else if (inputNumber == 2)
                 {
-                    Console.Clear();
+                    GameInfo.consoleUiSetting.ConsoleClear();
                     GameInfo.consoleUiSetting.ConsoleShowList();
                 }
                 else if (inputNumber == 3)
                 {
-                    Console.Clear();
+                    GameInfo.consoleUiSetting.ConsoleClear();
                     GameInfo.playSequence.PlayMode();
                 }
                 else if (inputNumber == 4)

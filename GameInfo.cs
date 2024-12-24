@@ -17,17 +17,16 @@ namespace FleetComander_Console
         public static PlaySequence playSequence = new PlaySequence();
         public static FleetSetting fleetSetting = new FleetSetting();
         public static BattleSetting battleSetting = new BattleSetting();
-        public static ShopMenu shopmenu = new ShopMenu();
         public static ConsoleUiSetting consoleUiSetting = new ConsoleUiSetting();
 
-        public static Random attackChance = new Random();
+        public static Random attackChance = new Random(); // 적 스크린을 뚫고 공격할 확률
 
         public static int InputNumberMethod()
         {
             int inputNumber = 0;
             bool isBoolCodition = false;
 
-           isBoolCodition = int.TryParse(Console.ReadLine(), out inputNumber);
+            isBoolCodition = int.TryParse(Console.ReadLine(), out inputNumber);
             while (isBoolCodition == false)
             {
                 Console.WriteLine("숫자를 입력해주세요");

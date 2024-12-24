@@ -24,11 +24,11 @@ namespace FleetComander_Console
             switch(inputNumber)
             {
                 case 1:
-                    Console.Clear();
+                    GameInfo.consoleUiSetting.ConsoleClear();
                     GameInfo.shopSetting.BuyShip();
                     break;
                 case 2:
-                    Console.Clear();
+                    GameInfo.consoleUiSetting.ConsoleClear();
                     GameInfo.mainMenu.SelectListMenu();
                     break;
             }
@@ -67,7 +67,7 @@ namespace FleetComander_Console
 
                             if (setkey.Key == ConsoleKey.Enter)
                             {
-                                Console.Clear();
+                                GameInfo.consoleUiSetting.ConsoleClear();
                             }
                             break;
                         }
@@ -79,7 +79,7 @@ namespace FleetComander_Console
 
                             if (setkey.Key == ConsoleKey.Enter)
                             {
-                                Console.Clear();
+                                GameInfo.consoleUiSetting.ConsoleClear();
                             }
                             break;
                         }
@@ -90,14 +90,14 @@ namespace FleetComander_Console
 
                             if (setkey.Key == ConsoleKey.Enter)
                             {
-                                Console.Clear();
+                                GameInfo.consoleUiSetting.ConsoleClear();
                             }
                             break;
                         }
                     }
                     else if (inputNumber == 4) // 상점 나가기
                     {
-                        Console.Clear();
+                        GameInfo.consoleUiSetting.ConsoleClear();
                         GameInfo.mainMenu.SelectListMenu();
                         break;
                     }
@@ -107,16 +107,6 @@ namespace FleetComander_Console
             {
                 Console.WriteLine("보유한 금액이 0원입니다.");
             }
-        }
-    }
-
-    class ShopMenu
-    {
-        public void ShopSequence()
-        {
-           int inputNumber = 0;
-
-            GameInfo.shopSetting.ShopList();
         }
     }
 }
