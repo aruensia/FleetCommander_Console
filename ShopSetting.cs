@@ -75,6 +75,7 @@ namespace FleetComander_Console
                         else if (GameInfo.user.Money < (GameInfo.playerFleet[inputNumber - 1].Price * inputNumber)) //보유한 돈이 구매하려는 함급보다 모자랄 경우
                         {
                             Console.WriteLine("보유한 금액이 구매하려는 함선의 비용보다 모자랍니다.");
+                            Console.WriteLine($"엔터를 입력해주세요.");
                             setkey = Console.ReadKey();
 
                             if (setkey.Key == ConsoleKey.Enter)
@@ -86,6 +87,7 @@ namespace FleetComander_Console
                         else
                         {
                             Console.WriteLine("보유한 금액이 구매하려는 함선의 비용보다 모자랍니다.");
+                            Console.WriteLine($"엔터를 입력해주세요.");
                             setkey = Console.ReadKey();
 
                             if (setkey.Key == ConsoleKey.Enter)
@@ -99,6 +101,11 @@ namespace FleetComander_Console
                     {
                         GameInfo.consoleUiSetting.ConsoleClear();
                         GameInfo.mainMenu.SelectListMenu();
+                        break;
+                    }
+                    else if (inputNumber > 4) // 상점 나가기
+                    {
+                        Console.WriteLine("1~4의 숫자를 입력하세요.");
                         break;
                     }
                 }

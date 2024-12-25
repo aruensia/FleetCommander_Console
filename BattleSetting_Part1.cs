@@ -14,11 +14,12 @@ namespace FleetComander_Console
 {
     interface IShipAbility
     {
-        void Skill();
+        // 모든 함선들은 스킬을 가져야 한다.
+        void Skill(int increseattack);
     }
 
 
-    class Ship
+    public abstract class Ship : IShipAbility
     {
         string _name;
         int _type;
@@ -35,7 +36,7 @@ namespace FleetComander_Console
 
         public Ship()
         {
-
+            Skill(Attack);
         }
 
         public Ship(string name, int attack, int defence, int hp, int unitCount, int screenpiercing, int price, int dac, int cac, int bac)
@@ -128,31 +129,37 @@ namespace FleetComander_Console
             set { _battleshipAttackChance = value; }
         }
         #endregion
+
+        public abstract void Skill(int increseattack);
     }
 
     #region 함선 클래스
 
     class Dsestroyer : Ship, IShipAbility
     {
+        //순양함과 전함의 공격을 우선적으로 맞아주는 함급. 구축함이 적을 수록 순양함과 전함이 공격받을 확률이 늘어난다.
+
         public Dsestroyer(string name, int attack, int defence, int hp, int unitCount, int screenpiercing, int price, int dac, int cac, int bac) : base(name, attack, defence, hp, unitCount, screenpiercing, price, dac, cac, bac)
         {
-            
+            Skill(Attack);
         }
 
-        public void Skill()
+        public override void Skill(int increseattack)
         {
-
+            Console.WriteLine("스킬을 사용 했다.");
         }
     }
 
-    class Cruiser : Ship, IShipAbility
+    class Cruiser : Ship, IShipAbility 
     {
+        //적당히 튼튼함. 구축함을 처리하기에 좋으며, 전함에게 딜을 어느정도 박을 수 있음
+
         public Cruiser(string name, int attack, int defence, int hp, int unitCount, int screenpiercing, int price, int dac, int cac, int bac) : base(name, attack, defence, hp, unitCount, screenpiercing, price, dac, cac, bac)
         {
-
+            Skill(Attack);
         }
 
-        public void Skill()
+        public override void Skill(int increseattack)
         {
 
         }
@@ -160,14 +167,48 @@ namespace FleetComander_Console
 
     class Battleship : Ship, IShipAbility
     {
+        // 체력과 방어력이 높으며 상대 전함을 저지하는 함급.
+
         public Battleship(string name, int attack, int defence, int hp, int unitCount, int screenpiercing, int price, int dac, int cac, int bac) : base(name, attack, defence, hp, unitCount, screenpiercing, price, dac, cac, bac)
         {
-
+            Skill(Attack);
         }
 
-        public void Skill()
+        public override void Skill(int increseattack)
         {
-             
+            int skillUseChance = GameInfo.attackChance.Next(1, 5); // 1 이상 5미만
+
+            switch(skillUseChance)
+            {
+                case 1:
+                    UseBeamWeapon();
+                    break;
+
+                case 2:
+                    UseEpicWeapon();
+                    break;
+                case 3:
+                    UseMissileWeapon();
+                    break;
+                case 4:
+                    Console.WriteLine("스킬을 사용하지 않았다.");
+                    break;
+            }
+
+            void UseBeamWeapon()
+            {
+
+            }
+
+            void UseEpicWeapon()
+            {
+
+            }
+
+            void UseMissileWeapon()
+            {
+
+            }
         }
     }
 
@@ -205,13 +246,14 @@ namespace FleetComander_Console
             GameInfo.playerFleet[1] = new Cruiser("유저 순양함", 20, 5, 200, 1, 500, 1000, 2, 5, 5);
             GameInfo.playerFleet[2] = new Battleship("유저 전함", 100, 15, 1000, 0, 30, 3000, 1, 6, 8);
 
-            GameInfo.enemyFleet[0] = new Dsestroyer("적 구축함", 10, 1, 10, 50, 50, 30, 7, 0, 2);
+            GameInfo.enemyFleet[0] = new Dsestroyer("적 구축함", 10, 1, 10, 5, 50, 30, 7, 0, 2);
             GameInfo.enemyFleet[1] = new Cruiser("적 순양함", 20, 5, 200, 1, 500, 30, 2, 5, 5);
             GameInfo.enemyFleet[2] = new Battleship("적 전함", 100, 15, 1000, 0, 3000, 30, 1, 6, 8);
+
         }    
     }
 
-    class BattleSetting //세팅된 함대가 전투를 하기 위해 세팅.
+    partial class BattleSetting //세팅된 함대가 전투를 하기 위해 세팅.
     {
         public int fleetType = 0;
         public bool userFirst = true;
@@ -304,58 +346,7 @@ namespace FleetComander_Console
             }
         }
 
-        public void FleetBattle() //5번 동안 양측 함대가 한 번 씩 공격을 주고 받음.
-        {
-            int trun = 0;
-
-            for (trun = 1; trun < 6; trun++)
-            {
-                userFirst = true;
-                Console.WriteLine($"현재 턴 {trun}");
-                Console.WriteLine("----- 유저 차례-----");
-                SaveBattleResult(userFirst);
-                Console.WriteLine(userFirst);
-                GameInfo.battleFleets.FleetAttack(attackerFleetCount, defenderFleetCount, defenderFleetHp, originFleetHp, fleetType, attackerFleetName, defenderFleetName);
-                SaveBattleResult(userFirst);
-
-                Console.WriteLine();
-                Console.WriteLine("----- 적 차례-----");
-                userFirst = false;
-                SaveBattleResult(userFirst);
-                Console.WriteLine(userFirst);
-                GameInfo.battleFleets.FleetAttack(attackerFleetCount, defenderFleetCount, defenderFleetHp, originFleetHp, fleetType, attackerFleetName, defenderFleetName);
-                SaveBattleResult(userFirst);
-
-                EndBattleResult();
-                Console.WriteLine("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ턴 종료ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ");
-            }
-        }
-
-        public void BattleResult()
-        {
-            Console.WriteLine();
-            Console.WriteLine("전투 종료!");
-            Console.WriteLine();
-            Console.WriteLine($"전투 결과는 다음과 같습니다.");
-            Console.WriteLine($"유저 : ");
-            Console.WriteLine($"{GameInfo.playerFleet[0].Name} : {GameInfo.playerFleet[0].UnitCount}");
-            Console.WriteLine($"{GameInfo.playerFleet[1].Name} : {GameInfo.playerFleet[1].UnitCount}");
-            Console.WriteLine($"{GameInfo.playerFleet[2].Name} : {GameInfo.playerFleet[2].UnitCount}");
-
-            Console.WriteLine();
-            Console.WriteLine($"적 : ");
-            Console.WriteLine($"{GameInfo.enemyFleet[0].Name} : {GameInfo.enemyFleet[0].UnitCount}");
-            Console.WriteLine($"{GameInfo.enemyFleet[1].Name} : {GameInfo.enemyFleet[1].UnitCount}");
-            Console.WriteLine($"{GameInfo.enemyFleet[2].Name} : {GameInfo.enemyFleet[2].UnitCount}");
-
-            ConsoleKeyInfo setkey;
-            setkey = Console.ReadKey();
-
-            if (setkey.Key == ConsoleKey.Enter)
-            {
-                Console.Clear();  // 전투 로그를 전부 지우기 위해 콘솔 클리어 사용.
-            }
-        }
+        
 
         public int WinnerJudgment(Ship[] enemyFleet) // 승패에 따라 승리 점수를 지급. 승리점수에 비례하여 돈을 획득.
         {
@@ -402,7 +393,7 @@ namespace FleetComander_Console
 
             if(userIsWinner > 0)
             {
-                GameInfo.user.Money = GameInfo.user.Money + (showGetMoney = (gameLevel + userIsWinner) * 1000);
+                GameInfo.user.Money = GameInfo.user.Money + (showGetMoney = (gameLevel + userIsWinner) * 5000);
                 Console.WriteLine($"전공에 대한 보상이 지급되었습니다.");
                 Console.WriteLine($"보상으로 {showGetMoney}원을 얻었습니다!");
                 ConsoleKeyInfo setkey;
@@ -417,7 +408,7 @@ namespace FleetComander_Console
         }
     }
 
-    class BattleFleets
+    partial class BattleFleets
     {
         public bool ScreenPiercing(int[] defenderFleetCount, int[] attackerFleetCount) ////구축함이 방벽역할을 하는 함수. (공격자 순양함 + 공격자 전함 / 방어자 구축함)
         {
@@ -457,6 +448,7 @@ namespace FleetComander_Console
                 {
                     for (int i = 0; i < attackerFleetCount[fleetType]; i++)
                     {
+                        
                         Console.WriteLine($"{attackerFleetName[fleetType]} / {attackerFleetCount[fleetType]}");
                         bool isPiercing = ScreenPiercing(defenderFleetCount, attackerFleetCount);
                         GameInfo.battleFleets.TakeDamage(fleetType, attackerFleetCount, defenderFleetCount, defenderFleetHp, originFleetHp, attackerFleetName, defenderFleetName, isPiercing);
@@ -494,7 +486,7 @@ namespace FleetComander_Console
             //데미지 계산 : 방어함대의 방어력 - 공격함대의 공격력
             setDamage = GameInfo.enemyFleet[fleetType].Attack - GameInfo.playerFleet[fleetType].Defence;
 
-            if (isPiercing == true )
+            if (isPiercing == true ) //적 함대의 스크린을 관통했다면 순차적으로 모두 공격
             {
                 for (int i = 0; i < 3; i++)
                 {
@@ -502,6 +494,7 @@ namespace FleetComander_Console
                     {
                         if (setDamage > 0) //공격자의 피해가 1보다 높을 경우 적에게 피해를 입힘
                         {
+                            
                             defenderFleetHp[i] = defenderFleetHp[i] - setDamage;
                             Console.WriteLine($"공격 함대 {attackerFleetName[fleetType]}은 방어 함대의 {defenderFleetName[i]} 을 공격했다.");
                             Console.WriteLine($"현재 대상의 남은 체력은 {defenderFleetHp[i]} 입니다.");
@@ -526,10 +519,11 @@ namespace FleetComander_Console
                     }
                 }
             }
-            else if ( isPiercing  == false)
+            else if ( isPiercing  == false) // 적 함대의 스크린을 관통하지 못했다면 공격 대상을 구축함으로 고정
             {
                 if (defenderFleetCount[0] > 0) //수비하는 함대의 유닛수가 1보다 많을 경우 전투 참여
                 {
+            
                     if (setDamage > 0) //공격자의 피해가 1보다 높을 경우 적에게 피해를 입힘
                     {
                         defenderFleetHp[0] = defenderFleetHp[0] - setDamage;
@@ -553,8 +547,9 @@ namespace FleetComander_Console
                 else if (defenderFleetCount[0] <= 0) //방어자의 유닛 수가 0일 경우 출력
                 {
                     Console.WriteLine($"전장에 {defenderFleetName[0]}이 없다.");
-                    if (defenderFleetCount[1] == 0)  // 방어자의 전함 수가 0일 경우 순양함을 공격
+                    if (defenderFleetCount[1] == 0)  // 방어자의 순양함 수가 0일 경우 전함을 공격
                     {
+                        
                         if (setDamage > 0)
                         {
                             defenderFleetHp[2] = defenderFleetHp[2] - setDamage;
@@ -597,7 +592,6 @@ namespace FleetComander_Console
                         {
                             defenderFleetHp[1] = defenderFleetHp[1] - 1;
                             Console.WriteLine("적의 공격력이 낮아 피해를 못줬다.");
-
                         }
 
                     }
