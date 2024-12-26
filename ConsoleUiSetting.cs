@@ -21,7 +21,8 @@ namespace FleetComander_Console
             if (setkey.Key == ConsoleKey.Enter)
             {
                 ConsoleClear();
-                GameInfo.mainMenu.SelectListMenu();
+                //GameInfo.mainMenu.SelectListMenu();
+                return;
             }
         }
 

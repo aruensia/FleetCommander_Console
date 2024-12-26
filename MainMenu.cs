@@ -18,32 +18,32 @@ namespace FleetComander_Console
             Console.WriteLine("1 : 게임을 시작하기");
             Console.WriteLine("2 : 나가기");
             int inputNumber = GameInfo.InputNumberMethod();
-            while (true)
+            
+            if (inputNumber == 1)
             {
-                if (inputNumber == 1)
-                {
-                    GameInfo.consoleUiSetting.ConsoleClear();
-                    SelectListMenu();
-                    break;
-                }
-                else if (inputNumber == 2)
-                {
-                    Environment.Exit(0);
-                }
+                GameInfo.consoleUiSetting.ConsoleClear();
+                SelectListMenu();
+                
+            }
+            else if (inputNumber == 2)
+            {
+                Environment.Exit(0);
             }
         }
 
         public void SelectListMenu()
         {
-            Console.WriteLine("1. 상점"); 
-            Console.WriteLine("2. 함대 정보"); 
-            Console.WriteLine("3. 전투 개시"); 
-            Console.WriteLine("4. 게임 종료");
-
-            int inputNumber = GameInfo.InputNumberMethod();
-
-            while (true)
+           
+            while(true)
             {
+                Console.WriteLine("----[메뉴]----");
+                Console.WriteLine("1. 상점");
+                Console.WriteLine("2. 함대 정보");
+                Console.WriteLine("3. 전투 개시");
+                Console.WriteLine("4. 게임 종료");
+
+                int inputNumber = GameInfo.InputNumberMethod();
+
                 if (inputNumber == 1)
                 {
                     GameInfo.consoleUiSetting.ConsoleClear();
@@ -63,7 +63,7 @@ namespace FleetComander_Console
                 {
                     Environment.Exit(0);
                 }
-            }
+            }    
         }
     }
 }

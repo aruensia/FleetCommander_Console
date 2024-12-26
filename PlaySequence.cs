@@ -23,7 +23,7 @@ namespace FleetComander_Console
                 {
                     GameInfo.consoleUiSetting.ConsoleClear();
                     GameInfo.mainMenu.SelectListMenu();           // 전투 종료 후 메뉴 선택으로 돌아옴.
-                    break;
+                    return;
                 }
             }
         }

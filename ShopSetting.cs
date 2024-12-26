@@ -21,16 +21,16 @@ namespace FleetComander_Console
             int inputNumber = GameInfo.InputNumberMethod();
 
             //1 이면 구매(ShopListPrint();). 2면 나가기.(GameInfo.mainMenu.SelectListMenu();)
-            switch(inputNumber)
+
+            if ( inputNumber == 1 )
             {
-                case 1:
-                    GameInfo.consoleUiSetting.ConsoleClear();
-                    GameInfo.shopSetting.BuyShip();
-                    break;
-                case 2:
-                    GameInfo.consoleUiSetting.ConsoleClear();
-                    GameInfo.mainMenu.SelectListMenu();
-                    break;
+                GameInfo.consoleUiSetting.ConsoleClear();
+                GameInfo.shopSetting.BuyShip();
+            }
+            else if ( inputNumber == 2 )
+            {
+                //GameInfo.consoleUiSetting.ConsoleClear();
+                return;
             }
         }
 
@@ -46,69 +46,68 @@ namespace FleetComander_Console
 
             if (GameInfo.user.Money >= 0)
             {
-                while (true)
+                
+                if (inputNumber == 1 || inputNumber == 2 || inputNumber == 3) // 함급을 선택하는 부분
                 {
-                    if (inputNumber == 1 || inputNumber == 2 || inputNumber == 3) // 함급을 선택하는 부분
+                    Console.WriteLine("몇 대를 구매하시겠습니까?");
+                    int buyFleetCount = GameInfo.InputNumberMethod();
+
+                    if (GameInfo.user.Money >= (GameInfo.playerFleet[inputNumber - 1].Price * buyFleetCount))
                     {
-                        Console.WriteLine("몇 대를 구매하시겠습니까?");
-                        int buyFleetCount = GameInfo.InputNumberMethod();
+                        Console.WriteLine($"{GameInfo.playerFleet[inputNumber - 1].Name} 선택");
+                        GameInfo.user.Money = GameInfo.user.Money - (GameInfo.playerFleet[inputNumber - 1].Price * buyFleetCount);
 
-                        if (GameInfo.user.Money >= (GameInfo.playerFleet[inputNumber - 1].Price * buyFleetCount))
+                        GameInfo.playerFleet[inputNumber - 1].UnitCount = GameInfo.playerFleet[inputNumber - 1].UnitCount + (1 * buyFleetCount);
+                        Console.WriteLine($"{GameInfo.playerFleet[inputNumber - 1].Name}을 {buyFleetCount}개 구매하셨습니다");
+                        Console.WriteLine($"보유한 {GameInfo.playerFleet[inputNumber - 1].Name} 수 : {GameInfo.playerFleet[inputNumber - 1].UnitCount}");
+                        Console.WriteLine($"보유한 금액은 {GameInfo.user.Money} 입니다.");
+                        Console.WriteLine($"엔터를 입력해주세요.");
+                        setkey = Console.ReadKey();
+
+                        if (setkey.Key == ConsoleKey.Enter)
                         {
-                            Console.WriteLine($"{GameInfo.playerFleet[inputNumber - 1].Name} 선택");
-                            GameInfo.user.Money = GameInfo.user.Money - (GameInfo.playerFleet[inputNumber - 1].Price * buyFleetCount);
-
-                            GameInfo.playerFleet[inputNumber - 1].UnitCount = GameInfo.playerFleet[inputNumber - 1].UnitCount + (1 * buyFleetCount);
-                            Console.WriteLine($"{GameInfo.playerFleet[inputNumber - 1].Name}을 {buyFleetCount}개 구매하셨습니다");
-                            Console.WriteLine($"보유한 {GameInfo.playerFleet[inputNumber - 1].Name} 수 : {GameInfo.playerFleet[inputNumber - 1].UnitCount}");
-                            Console.WriteLine($"보유한 금액은 {GameInfo.user.Money} 입니다.");
-                            Console.WriteLine($"엔터를 입력해주세요.");
-                            setkey = Console.ReadKey();
-
-                            if (setkey.Key == ConsoleKey.Enter)
-                            {
-                                GameInfo.consoleUiSetting.ConsoleClear();
-                            }
-                            break;
+                            GameInfo.consoleUiSetting.ConsoleClear();
                         }
-                        
-                        else if (GameInfo.user.Money < (GameInfo.playerFleet[inputNumber - 1].Price * inputNumber)) //보유한 돈이 구매하려는 함급보다 모자랄 경우
-                        {
-                            Console.WriteLine("보유한 금액이 구매하려는 함선의 비용보다 모자랍니다.");
-                            Console.WriteLine($"엔터를 입력해주세요.");
-                            setkey = Console.ReadKey();
-
-                            if (setkey.Key == ConsoleKey.Enter)
-                            {
-                                GameInfo.consoleUiSetting.ConsoleClear();
-                            }
-                            break;
-                        }
-                        else
-                        {
-                            Console.WriteLine("보유한 금액이 구매하려는 함선의 비용보다 모자랍니다.");
-                            Console.WriteLine($"엔터를 입력해주세요.");
-                            setkey = Console.ReadKey();
-
-                            if (setkey.Key == ConsoleKey.Enter)
-                            {
-                                GameInfo.consoleUiSetting.ConsoleClear();
-                            }
-                            break;
-                        }
+                        return;
                     }
-                    else if (inputNumber == 4) // 상점 나가기
+                    
+                    else if (GameInfo.user.Money < (GameInfo.playerFleet[inputNumber - 1].Price * inputNumber)) //보유한 돈이 구매하려는 함급보다 모자랄 경우
                     {
-                        GameInfo.consoleUiSetting.ConsoleClear();
-                        GameInfo.mainMenu.SelectListMenu();
-                        break;
+                        Console.WriteLine("보유한 금액이 구매하려는 함선의 비용보다 모자랍니다.");
+                        Console.WriteLine($"엔터를 입력해주세요.");
+                        setkey = Console.ReadKey();
+
+                        if (setkey.Key == ConsoleKey.Enter)
+                        {
+                            GameInfo.consoleUiSetting.ConsoleClear();
+                        }
+                    return;
                     }
-                    else if (inputNumber > 4) // 상점 나가기
+                    else
                     {
-                        Console.WriteLine("1~4의 숫자를 입력하세요.");
-                        break;
+                        Console.WriteLine("보유한 금액이 구매하려는 함선의 비용보다 모자랍니다.");
+                        Console.WriteLine($"엔터를 입력해주세요.");
+                        setkey = Console.ReadKey();
+
+                        if (setkey.Key == ConsoleKey.Enter)
+                        {
+                            GameInfo.consoleUiSetting.ConsoleClear();
+                        }
+                    return;
                     }
                 }
+                else if (inputNumber == 4) // 상점 나가기
+                {
+                    GameInfo.consoleUiSetting.ConsoleClear();
+                    //GameInfo.mainMenu.SelectListMenu();
+                    return;
+                }
+                else if (inputNumber > 4) // 숫자 비교
+                {
+                    Console.WriteLine("1~4의 숫자를 입력하세요.");
+                    return;
+                }
+                
             }
             else if (GameInfo.user.Money == 0)
             {

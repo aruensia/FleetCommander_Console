@@ -349,8 +349,6 @@ namespace FleetComander_Console
             }
         }
 
-
-
         public int WinnerJudgment(Ship[] enemyFleet) // 승패에 따라 승리 점수를 지급. 승리점수에 비례하여 돈을 획득.
         {
             int victoryValue = 0;
@@ -668,7 +666,6 @@ namespace FleetComander_Console
                             Console.WriteLine("적의 공격력이 낮아 피해를 못줬다.");
                         }
                     }
-
                 }
             }
             return battleOverCheck;
