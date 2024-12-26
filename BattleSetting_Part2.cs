@@ -20,7 +20,7 @@ namespace FleetComander_Console
                 Console.WriteLine($"현재 턴 {trun}");
                 Console.WriteLine("----- 유저 차례-----");
                 Console.WriteLine(userFirst);
-                battleOverCheck = GameInfo.battleFleets.FleetAttack(attackerFleetCount, defenderFleetCount, defenderFleetHp, originFleetHp, fleetType, attackerFleetName, defenderFleetName);
+                battleOverCheck = GameInfo.battleFleets.FleetAttack(attackerFleetCount, defenderFleetCount, defenderFleetHp, originFleetHp, fleetType, attackerFleetName, defenderFleetName, userFirst);
                 SaveBattleResult(userFirst);
 
                 Console.WriteLine();
@@ -28,12 +28,21 @@ namespace FleetComander_Console
                 userFirst = false;
                 BattleEngage(userFirst);
                 Console.WriteLine(userFirst);
-                battleOverCheck = GameInfo.battleFleets.FleetAttack(attackerFleetCount, defenderFleetCount, defenderFleetHp, originFleetHp, fleetType, attackerFleetName, defenderFleetName);
+                battleOverCheck = GameInfo.battleFleets.FleetAttack(attackerFleetCount, defenderFleetCount, defenderFleetHp, originFleetHp, fleetType, attackerFleetName, defenderFleetName, userFirst);
                 SaveBattleResult(userFirst);
 
                 EndBattleResult();
+
+                if (GameInfo.playerFleet[0].UnitCount == 0 && GameInfo.playerFleet[1].UnitCount == 0 && GameInfo.playerFleet[2].UnitCount == 0)
+                {
+                    GameOverCodition();
+                }
+
                 trun++;
                 Console.WriteLine("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ턴 종료ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ");
+
+
+
                 if (battleOverCheck == true)
                 {
                     break;
@@ -66,13 +75,45 @@ namespace FleetComander_Console
                 Console.Clear();  // 100줄 이상 넘어가는 전투 로그를 전부 지우기 위해 콘솔 클리어 사용.
             }
         }
+
+        public void GameOverCodition()
+        {
+            if(GameInfo.playerFleet[0].UnitCount == 0 && GameInfo.playerFleet[1].UnitCount == 0 && GameInfo.playerFleet[2].UnitCount == 0)
+            {
+                Console.WriteLine();
+                Console.WriteLine("----------------------------------------");
+                Console.WriteLine("패배 했습니다!");
+                Console.WriteLine("계속 하시려면 1을 눌러주세요.");
+
+                int inputNumber = GameInfo.InputNumberMethod();
+                if( inputNumber == 1)
+                {
+                    Console.Clear();
+                    GameInfo.mainMenu.GameStart();
+                }
+            }
+        }
     }
 
     partial class BattleFleets
     {
-        public void UseSkill()
+        public void UseSkill(bool userFirst)
         {
-            //GameInfo.playerFleet[0].Skill(GameInfo.playerFleet[0].Attack);
+            if (userFirst == true)
+            {
+                GameInfo.playerFleet[0].Skill(GameInfo.playerFleet[0].Attack, GameInfo.playerFleet[0].Defence);
+                GameInfo.playerFleet[1].Skill(GameInfo.playerFleet[1].Attack, GameInfo.playerFleet[1].Defence);
+                GameInfo.playerFleet[2].Skill(GameInfo.playerFleet[2].Attack, GameInfo.playerFleet[2].Defence);
+            }
+            else if (userFirst == false)
+            {
+                GameInfo.enemyFleet[0].Skill(GameInfo.enemyFleet[0].Attack, GameInfo.enemyFleet[0].Defence);
+                GameInfo.enemyFleet[1].Skill(GameInfo.enemyFleet[0].Attack, GameInfo.enemyFleet[1].Defence);
+                GameInfo.enemyFleet[2].Skill(GameInfo.enemyFleet[0].Attack, GameInfo.enemyFleet[2].Defence);
+            }
+            
         }
     }
+
+    
 }

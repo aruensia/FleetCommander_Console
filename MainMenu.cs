@@ -22,30 +22,22 @@ namespace FleetComander_Console
             {
                 if (inputNumber == 1)
                 {
-                    switch (inputNumber)
-                    {
-                        case 1:
-                            GameInfo.consoleUiSetting.ConsoleClear();
-                            SelectListMenu();
-                            break;
-                        case 2:
-                            Environment.Exit(0);
-                            break;
-                    }
+                    GameInfo.consoleUiSetting.ConsoleClear();
+                    SelectListMenu();
+                    break;
                 }
-                else if (inputNumber > 2)
+                else if (inputNumber == 2)
                 {
-                    Console.WriteLine("1~2의 숫자를 입력해주세요.");
-                    GameInfo.InputNumberMethod();
+                    Environment.Exit(0);
                 }
             }
         }
 
         public void SelectListMenu()
         {
-            Console.WriteLine("1. 상점"); //GameInfo.shopSetting.ShopList();
-            Console.WriteLine("2. 함대 정보"); //GameInfo.shopSetting.ShopList();
-            Console.WriteLine("3. 전투 개시"); //GameInfo.playSequence.PlayMode();
+            Console.WriteLine("1. 상점"); 
+            Console.WriteLine("2. 함대 정보"); 
+            Console.WriteLine("3. 전투 개시"); 
             Console.WriteLine("4. 게임 종료");
 
             int inputNumber = GameInfo.InputNumberMethod();
