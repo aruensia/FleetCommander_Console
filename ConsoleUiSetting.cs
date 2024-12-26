@@ -21,7 +21,6 @@ namespace FleetComander_Console
             if (setkey.Key == ConsoleKey.Enter)
             {
                 ConsoleClear();
-                //GameInfo.mainMenu.SelectListMenu();
                 return;
             }
         }
@@ -44,6 +43,47 @@ namespace FleetComander_Console
                 "                                                                                                                                                                      ");
             Console.SetCursorPosition(0, 0);
 
+        }
+
+        public void StartCursorPosition()
+        {
+
+        }
+
+        public void StartTitle()
+        {
+            Console.SetCursorPosition(0, 0);
+
+            Console.WriteLine("┌ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ┐");
+            Console.WriteLine("│          ..######..########.....###.....######..########.....######..##.....##.####.########.            │");
+            Console.WriteLine("│          .##....##.##.....##...##.##...##....##.##..........##....##.##.....##..##..##.....##            │");
+            Console.WriteLine("│          .##.......##.....##..##...##..##.......##..........##.......##.....##..##..##.....##            │");
+            Console.WriteLine("│          ..######..########..##.....##.##.......######.......######..#########..##..########.            │");
+            Console.WriteLine("│          .......##.##........#########.##.......##................##.##.....##..##..##.......            │");  
+            Console.WriteLine("│          .##....##.##........##.....##.##....##.##..........##....##.##.....##..##..##.......            │");
+            Console.WriteLine("│          ..######..##........##.....##..######..########.....######..##.....##.####.##.......            │");
+            Console.WriteLine("│                                                                                                          │");
+            Console.WriteLine("│                                           1 : 게임을 시작하기                                            │");
+            Console.WriteLine("│                                           2 : 나가기                                    　               │");
+            Console.WriteLine("│                                                                                         　               │");
+            Console.WriteLine("└ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ┘");
+        }
+
+        public void ShipInfoPrint()
+        {
+            Console.WriteLine("┌ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ┐");
+            Console.WriteLine("│                                                                                                          │");
+            Console.WriteLine("│                                                                                                          │");
+            Console.WriteLine("│                                                                                                          │");
+            Console.WriteLine("│                                                                                                          │");
+            Console.WriteLine("│                                                                                                          │");
+            Console.WriteLine("│                                                                                                          │");
+            Console.WriteLine("│                                                                                                          │");
+            Console.WriteLine("│                                                                                                          │");
+            Console.WriteLine("│                                                                                                          │");
+            Console.WriteLine("│                                                                               　                         │");
+            Console.WriteLine("│                                                                                        　                │");
+            Console.WriteLine("└ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ┘");
         }
     }
 }

@@ -29,7 +29,6 @@ namespace FleetComander_Console
             }
             else if ( inputNumber == 2 )
             {
-                //GameInfo.consoleUiSetting.ConsoleClear();
                 return;
             }
         }
@@ -81,7 +80,7 @@ namespace FleetComander_Console
                         {
                             GameInfo.consoleUiSetting.ConsoleClear();
                         }
-                    return;
+                        return;
                     }
                     else
                     {
@@ -93,7 +92,7 @@ namespace FleetComander_Console
                         {
                             GameInfo.consoleUiSetting.ConsoleClear();
                         }
-                    return;
+                        return;
                     }
                 }
                 else if (inputNumber == 4) // 상점 나가기

@@ -27,13 +27,12 @@ namespace FleetComander_Console
             int inputNumber = 0;
             bool isBoolCodition = false;
 
-            //isBoolCodition = int.TryParse(Console.ReadLine(), out inputNumber);
             while (isBoolCodition == false)
             {
                 Console.WriteLine("");
-                Console.WriteLine("숫자를 입력해주세요");
+                Console.Write("숫자를 입력해주세요 : ");
                 isBoolCodition = int.TryParse(Console.ReadLine(), out inputNumber);
-                GameInfo.consoleUiSetting.ConsoleClear();
+                //GameInfo.consoleUiSetting.ConsoleClear();
             }
             
             return inputNumber;

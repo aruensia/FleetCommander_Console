@@ -13,10 +13,9 @@ namespace FleetComander_Console
         public void GameStart()
         {
             GameInfo.consoleUiSetting.ConsoleClear();
+            GameInfo.consoleUiSetting.StartTitle();
             GameInfo.fleetSetting.FleetDefaltSetting();
 
-            Console.WriteLine("1 : 게임을 시작하기");
-            Console.WriteLine("2 : 나가기");
             int inputNumber = GameInfo.InputNumberMethod();
             
             if (inputNumber == 1)

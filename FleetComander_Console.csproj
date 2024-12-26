@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="ConsoleUiSetting.cs" />
     <Compile Include="BattleSetting_Part2.cs" />
+    <Compile Include="FileName.cs" />
     <Compile Include="GameInfo.cs" />
     <Compile Include="MainMenu.cs" />
     <Compile Include="PlaySequence.cs" />

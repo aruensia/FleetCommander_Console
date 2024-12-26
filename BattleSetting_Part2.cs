@@ -41,8 +41,6 @@ namespace FleetComander_Console
                 trun++;
                 Console.WriteLine("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ턴 종료ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ");
 
-
-
                 if (battleOverCheck == true)
                 {
                     break;
@@ -108,8 +106,8 @@ namespace FleetComander_Console
             else if (userFirst == false)
             {
                 GameInfo.enemyFleet[0].Skill(GameInfo.enemyFleet[0].Attack, GameInfo.enemyFleet[0].Defence);
-                GameInfo.enemyFleet[1].Skill(GameInfo.enemyFleet[0].Attack, GameInfo.enemyFleet[1].Defence);
-                GameInfo.enemyFleet[2].Skill(GameInfo.enemyFleet[0].Attack, GameInfo.enemyFleet[2].Defence);
+                GameInfo.enemyFleet[1].Skill(GameInfo.enemyFleet[1].Attack, GameInfo.enemyFleet[1].Defence);
+                GameInfo.enemyFleet[2].Skill(GameInfo.enemyFleet[2].Attack, GameInfo.enemyFleet[2].Defence);
             }
             
         }

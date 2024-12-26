@@ -14,18 +14,6 @@ namespace FleetComander_Console
 
             setRewardRate = EnemyFleetLevelSetting();
             GameInfo.battleSetting.BattleFleid(setRewardRate); //전투를 세팅하고 승패에 따라 돈을 얻는 클래스 및 함수.
-            //Console.WriteLine($"게임 단계 값 : {GameInfo._nextenemylevel}");
-            Console.WriteLine("1을 눌러 종료하세요.");
-
-            while(true)
-            {
-                if(GameInfo.InputNumberMethod() == 1)
-                {
-                    GameInfo.consoleUiSetting.ConsoleClear();
-                    GameInfo.mainMenu.SelectListMenu();           // 전투 종료 후 메뉴 선택으로 돌아옴.
-                    return;
-                }
-            }
         }
 
         public int SetupEnemyGameLevel()
