@@ -18,9 +18,10 @@ namespace FleetComander_Console
         public static FleetSetting fleetSetting = new FleetSetting();
         public static BattleSetting battleSetting = new BattleSetting();
         public static ConsoleUiSetting consoleUiSetting = new ConsoleUiSetting();
+        public static int _nextenemylevel = 0;
 
         public static Random attackChance = new Random(); // 적 스크린을 뚫고 공격할 확률
-
+        
         public static int InputNumberMethod()
         {
             int inputNumber = 0;

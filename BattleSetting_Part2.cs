@@ -10,26 +10,34 @@ namespace FleetComander_Console
     {
         public void FleetBattle() //5번 동안 양측 함대가 한 번 씩 공격을 주고 받음.
         {
-            int trun = 0;
+            int trun = 1;
+            bool battleOverCheck = false;
 
-            for (trun = 1; trun < 6; trun++)
+            for (int i = 1; i < 6; i++)
             {
                 userFirst = true;
+                BattleEngage(userFirst);
                 Console.WriteLine($"현재 턴 {trun}");
                 Console.WriteLine("----- 유저 차례-----");
                 Console.WriteLine(userFirst);
-                GameInfo.battleFleets.FleetAttack(attackerFleetCount, defenderFleetCount, defenderFleetHp, originFleetHp, fleetType, attackerFleetName, defenderFleetName);
+                battleOverCheck = GameInfo.battleFleets.FleetAttack(attackerFleetCount, defenderFleetCount, defenderFleetHp, originFleetHp, fleetType, attackerFleetName, defenderFleetName);
                 SaveBattleResult(userFirst);
 
                 Console.WriteLine();
                 Console.WriteLine("----- 적 차례-----");
                 userFirst = false;
+                BattleEngage(userFirst);
                 Console.WriteLine(userFirst);
-                GameInfo.battleFleets.FleetAttack(attackerFleetCount, defenderFleetCount, defenderFleetHp, originFleetHp, fleetType, attackerFleetName, defenderFleetName);
+                battleOverCheck = GameInfo.battleFleets.FleetAttack(attackerFleetCount, defenderFleetCount, defenderFleetHp, originFleetHp, fleetType, attackerFleetName, defenderFleetName);
                 SaveBattleResult(userFirst);
 
                 EndBattleResult();
+                trun++;
                 Console.WriteLine("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ턴 종료ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ");
+                if (battleOverCheck == true)
+                {
+                    break;
+                }
             }
         }
 
@@ -62,6 +70,9 @@ namespace FleetComander_Console
 
     partial class BattleFleets
     {
-
+        public void UseSkill()
+        {
+            //GameInfo.playerFleet[0].Skill(GameInfo.playerFleet[0].Attack);
+        }
     }
 }
