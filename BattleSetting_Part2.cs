@@ -15,21 +15,21 @@ namespace FleetComander_Console
 
             for (int i = 1; i < 6; i++)
             {
-                userFirst = true;
-                BattleEngage(userFirst);
-                Console.WriteLine($"현재 턴 {trun}");
-                Console.WriteLine("----- 유저 차례-----");
-                Console.WriteLine(userFirst);
-                battleOverCheck = GameInfo.battleFleets.FleetAttack(attackerFleetCount, defenderFleetCount, defenderFleetHp, originFleetHp, fleetType, attackerFleetName, defenderFleetName, userFirst);
-                SaveBattleResult(userFirst);
+                battleInfo.userFirst = true;
+                BattleEngage(battleInfo.userFirst);
+                //Console.WriteLine($"현재 턴 {trun}");
+                //Console.WriteLine("----- 유저 차례-----");
+                //Console.WriteLine(battleInfo.userFirst);
+                battleOverCheck = GameInfo.battleFleets.FleetAttack(battleInfo);
+                SaveBattleResult(battleInfo.userFirst);
 
-                Console.WriteLine();
-                Console.WriteLine("----- 적 차례-----");
-                userFirst = false;
-                BattleEngage(userFirst);
-                Console.WriteLine(userFirst);
-                battleOverCheck = GameInfo.battleFleets.FleetAttack(attackerFleetCount, defenderFleetCount, defenderFleetHp, originFleetHp, fleetType, attackerFleetName, defenderFleetName, userFirst);
-                SaveBattleResult(userFirst);
+                //Console.WriteLine();
+                //Console.WriteLine("----- 적 차례-----");
+                battleInfo.userFirst = false;
+                BattleEngage(battleInfo.userFirst);
+                //Console.WriteLine(battleInfo.userFirst);
+                battleOverCheck = GameInfo.battleFleets.FleetAttack(battleInfo);
+                SaveBattleResult(battleInfo.userFirst);
 
                 EndBattleResult();
 
@@ -39,7 +39,7 @@ namespace FleetComander_Console
                 }
 
                 trun++;
-                Console.WriteLine("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ턴 종료ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ");
+                //Console.WriteLine("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ턴 종료ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ");
 
                 if (battleOverCheck == true)
                 {
@@ -50,21 +50,6 @@ namespace FleetComander_Console
 
         public void BattleResult()
         {
-            Console.WriteLine();
-            Console.WriteLine("전투 종료!");
-            Console.WriteLine();
-            Console.WriteLine($"전투 결과는 다음과 같습니다.");
-            Console.WriteLine($"유저 : ");
-            Console.WriteLine($"{GameInfo.playerFleet[0].Name} : {GameInfo.playerFleet[0].UnitCount}");
-            Console.WriteLine($"{GameInfo.playerFleet[1].Name} : {GameInfo.playerFleet[1].UnitCount}");
-            Console.WriteLine($"{GameInfo.playerFleet[2].Name} : {GameInfo.playerFleet[2].UnitCount}");
-
-            Console.WriteLine();
-            Console.WriteLine($"적 : ");
-            Console.WriteLine($"{GameInfo.enemyFleet[0].Name} : {GameInfo.enemyFleet[0].UnitCount}");
-            Console.WriteLine($"{GameInfo.enemyFleet[1].Name} : {GameInfo.enemyFleet[1].UnitCount}");
-            Console.WriteLine($"{GameInfo.enemyFleet[2].Name} : {GameInfo.enemyFleet[2].UnitCount}");
-
             GameInfo.consoleUiSetting.BettleResultPrint();
 
             ConsoleKeyInfo setkey;

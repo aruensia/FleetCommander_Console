@@ -194,10 +194,82 @@ namespace FleetComander_Console
             Console.WriteLine("┌ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ┐");
             Console.WriteLine("│                                                    전투 결과                                             │");
             Console.WriteLine("│                                -제국군 함대-                       -연합군 함대-                         │");
+            Console.WriteLine("│                                 보유 / 손실                         보유 / 손실                          │");
+            Console.WriteLine("│ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ│");
+            Console.WriteLine($"                                구축함 : {GameInfo.playerFleet[0].UnitCount} | {GameInfo.playerFleet[0]._LossShip}                       구축함 : {GameInfo.enemyFleet[0].UnitCount} | {GameInfo.enemyFleet[0]._LossShip}                           ");
+            Console.WriteLine($"                                순양함 : {GameInfo.playerFleet[1].UnitCount} | {GameInfo.playerFleet[1]._LossShip}                       순양함 : {GameInfo.enemyFleet[1].UnitCount} | {GameInfo.enemyFleet[1]._LossShip}                          ");
+            Console.WriteLine($"                                 전함 : {GameInfo.playerFleet[2].UnitCount} | {GameInfo.playerFleet[2]._LossShip}                         전함  : {GameInfo.enemyFleet[2].UnitCount} | {GameInfo.enemyFleet[2]._LossShip}                           ");
             Console.WriteLine("│                                                                                                          │");
-            Console.WriteLine($"                             구축함 : {GameInfo.playerFleet[0].UnitCount} - ~ 손실                  구축함 : {GameInfo.enemyFleet[0].UnitCount}  손실                          ");
-            Console.WriteLine($"                             순양함 : {GameInfo.playerFleet[1].UnitCount} ~ 손실                    순양함 : {GameInfo.enemyFleet[1].UnitCount}  손실                         ");
-            Console.WriteLine($"                              전함 : {GameInfo.playerFleet[2].UnitCount} ~ 손실                      전함  : {GameInfo.enemyFleet[2].UnitCount}  손실                          ");
+            Console.WriteLine("│                                                                                                          │");
+            Console.WriteLine("│                                                                                                          │");
+            Console.WriteLine("│                                                                                        　                │");
+            Console.WriteLine("└ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ┘");
+        }
+
+        public void VictoryPrint(bool victoryConditionChk)
+        {
+            if ( victoryConditionChk == true)
+            {
+                Console.WriteLine("┌ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ┐");
+                Console.WriteLine("│                                                                                                          │");
+                Console.WriteLine("│                                                                                                          │");
+                Console.WriteLine("│                                                                                                          │");
+                Console.WriteLine("│                                                대승리입니다!                                             │");
+                Console.WriteLine("│                                            적을 전멸 시켰습니다!                                         │");
+                Console.WriteLine("│                                                                                                          │");
+                Console.WriteLine("│                                                                                                          │");
+                Console.WriteLine("│                                                                                                          │");
+                Console.WriteLine("│                                                                                                          │");
+                Console.WriteLine("│                                                                               　                         │");
+                Console.WriteLine("│                                                                                        　                │");
+                Console.WriteLine("└ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ┘");
+            }
+
+            else if ( victoryConditionChk == false)
+            {
+                Console.WriteLine("┌ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ┐");
+                Console.WriteLine("│                                                                                                          │");
+                Console.WriteLine("│                                                                                                          │");
+                Console.WriteLine("│                                                                                                          │");
+                Console.WriteLine("│                                                승리입니다.                                               │");
+                Console.WriteLine("│                                             적이 후퇴합니다!                                             │");
+                Console.WriteLine("│                                                                                                          │");
+                Console.WriteLine("│                                                                                                          │");
+                Console.WriteLine("│                                                                                                          │");
+                Console.WriteLine("│                                                                                                          │");
+                Console.WriteLine("│                                                                               　                         │");
+                Console.WriteLine("│                                                                                        　                │");
+                Console.WriteLine("└ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ┘");
+            }
+        }
+        
+
+        public void GetReward(int showGetMoney)
+        {
+            Console.WriteLine("┌ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ┐");
+            Console.WriteLine("│                                                                                                          │");
+            Console.WriteLine("│                                                                                                          │");
+            Console.WriteLine("│                                                                                                          │");
+            Console.WriteLine("│                                    전공에 대한 보상이 지급되었습니다.                                    │");
+            Console.WriteLine($"│                                    보상으로 {showGetMoney}원을 얻었습니다!                                        │");
+            Console.WriteLine("│                                                                                                          │");
+            Console.WriteLine("│                                                                                                          │");
+            Console.WriteLine("│                                                                                                          │");
+            Console.WriteLine("│                                                                                                          │");
+            Console.WriteLine("│                                                                               　                         │");
+            Console.WriteLine("│                                                                                        　                │");
+            Console.WriteLine("└ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ┘");
+        }
+
+        public void GameOver()
+        {
+            Console.WriteLine("┌ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ┐");
+            Console.WriteLine("│                                                                                                          │");
+            Console.WriteLine("│                                                                                                          │");
+            Console.WriteLine("│                                                                                                          │");
+            Console.WriteLine("│                                               패배했습니다.                                               │");
+            Console.WriteLine("│                                                                                                          │");
+            Console.WriteLine("│                                                                                                          │");
             Console.WriteLine("│                                                                                                          │");
             Console.WriteLine("│                                                                                                          │");
             Console.WriteLine("│                                                                                                          │");

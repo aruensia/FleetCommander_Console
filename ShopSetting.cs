@@ -77,6 +77,7 @@ namespace FleetComander_Console
                     else if (GameInfo.user.Money >= (GameInfo.playerFleet[inputNumber - 1].Price * buyFleetCount))
                     {
                         GameInfo.user.Money = GameInfo.user.Money - (GameInfo.playerFleet[inputNumber - 1].Price * buyFleetCount);
+                        GameInfo.playerFleet[inputNumber - 1].UnitCount = GameInfo.playerFleet[inputNumber - 1].UnitCount + (1 * buyFleetCount);
                         GameInfo.consoleUiSetting.ConsoleClear();
                         GameInfo.consoleUiSetting.ShipBuyPrint(inputNumber, buyFleetCount);
 
