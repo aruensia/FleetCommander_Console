@@ -35,11 +35,7 @@ namespace FleetComander_Console
            
             while(true)
             {
-                Console.WriteLine("----[메뉴]----");
-                Console.WriteLine("1. 상점");
-                Console.WriteLine("2. 함대 정보");
-                Console.WriteLine("3. 전투 개시");
-                Console.WriteLine("4. 게임 종료");
+                GameInfo.consoleUiSetting.MenuListPrint();
 
                 int inputNumber = GameInfo.InputNumberMethod();
 

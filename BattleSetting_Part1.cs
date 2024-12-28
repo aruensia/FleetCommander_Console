@@ -248,13 +248,13 @@ namespace FleetComander_Console
     {
         public void FleetDefaltSetting()
         {
-            GameInfo.playerFleet[0] = new Dsestroyer("유저 구축함", 10, 1, 10, 10, 50, 30, 7, 0, 2);
-            GameInfo.playerFleet[1] = new Cruiser("유저 순양함", 20, 5, 200, 1, 500, 1000, 2, 5, 5);
-            GameInfo.playerFleet[2] = new Battleship("유저 전함", 100, 15, 1000, 0, 30, 3000, 1, 6, 8);
+            GameInfo.playerFleet[0] = new Dsestroyer("제국 구축함", 10, 1, 10, 10, 50, 100, 7, 0, 2);
+            GameInfo.playerFleet[1] = new Cruiser("제국 순양함", 20, 5, 200, 1, 500, 1000, 2, 5, 5);
+            GameInfo.playerFleet[2] = new Battleship("제국 전함", 100, 15, 1000, 0, 30, 3000, 1, 6, 8);
 
-            GameInfo.enemyFleet[0] = new Dsestroyer("적 구축함", 10, 1, 10, 5, 50, 30, 7, 0, 2);
-            GameInfo.enemyFleet[1] = new Cruiser("적 순양함", 20, 5, 200, 1, 500, 30, 2, 5, 5);
-            GameInfo.enemyFleet[2] = new Battleship("적 전함", 100, 15, 1000, 0, 3000, 30, 1, 6, 8);
+            GameInfo.enemyFleet[0] = new Dsestroyer("연합국 구축함", 10, 1, 10, 5, 50, 30, 7, 0, 2);
+            GameInfo.enemyFleet[1] = new Cruiser("연합국 순양함", 20, 5, 200, 1, 500, 30, 2, 5, 5);
+            GameInfo.enemyFleet[2] = new Battleship("연합국 전함", 100, 15, 1000, 0, 3000, 30, 1, 6, 8);
 
         }
     }

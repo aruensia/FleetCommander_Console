@@ -65,6 +65,8 @@ namespace FleetComander_Console
             Console.WriteLine($"{GameInfo.enemyFleet[1].Name} : {GameInfo.enemyFleet[1].UnitCount}");
             Console.WriteLine($"{GameInfo.enemyFleet[2].Name} : {GameInfo.enemyFleet[2].UnitCount}");
 
+            GameInfo.consoleUiSetting.BettleResultPrint();
+
             ConsoleKeyInfo setkey;
             setkey = Console.ReadKey();
 

@@ -32,8 +32,8 @@ namespace FleetComander_Console
 
             int rewardRate = 0;
 
-            Console.WriteLine("난이도를 선택해주세요");
-            Console.WriteLine("1 : 쉬움 | 2 : 보통 | 3: 어려움");
+            GameInfo.consoleUiSetting.SellectEnemyLevel();
+
             int inputNumber = GameInfo.InputNumberMethod();
 
             if (inputNumber == 1)

@@ -1,42 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Ed\\FleetCommander_Console\\",
+  "WorkspaceRootPath": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\ED\\FleetComander_Console\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2B9A28BD-F726-4D72-BABB-7A296F3914B3}|FleetComander_Console.csproj|C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Ed\\FleetCommander_Console\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B9A28BD-F726-4D72-BABB-7A296F3914B3}|FleetComander_Console.csproj|solutionrelative:mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B9A28BD-F726-4D72-BABB-7A296F3914B3}|FleetComander_Console.csproj|C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Ed\\FleetCommander_Console\\consoleuisetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2B9A28BD-F726-4D72-BABB-7A296F3914B3}|FleetComander_Console.csproj|c:\\users\\aruen\\onedrive\\\uBC14\uD0D5 \uD654\uBA74\\ed\\fleetcomander_console\\consoleuisetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B9A28BD-F726-4D72-BABB-7A296F3914B3}|FleetComander_Console.csproj|solutionrelative:consoleuisetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2B9A28BD-F726-4D72-BABB-7A296F3914B3}|FleetComander_Console.csproj|C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Ed\\FleetCommander_Console\\playsequence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B9A28BD-F726-4D72-BABB-7A296F3914B3}|FleetComander_Console.csproj|solutionrelative:playsequence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B9A28BD-F726-4D72-BABB-7A296F3914B3}|FleetComander_Console.csproj|C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Ed\\FleetCommander_Console\\gameinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B9A28BD-F726-4D72-BABB-7A296F3914B3}|FleetComander_Console.csproj|solutionrelative:gameinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B9A28BD-F726-4D72-BABB-7A296F3914B3}|FleetComander_Console.csproj|C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Ed\\FleetCommander_Console\\shopsetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B9A28BD-F726-4D72-BABB-7A296F3914B3}|FleetComander_Console.csproj|solutionrelative:shopsetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B9A28BD-F726-4D72-BABB-7A296F3914B3}|FleetComander_Console.csproj|c:\\users\\aruen\\onedrive\\\uBC14\uD0D5 \uD654\uBA74\\ed\\fleetcommander_console\\battlesetting_part2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B9A28BD-F726-4D72-BABB-7A296F3914B3}|FleetComander_Console.csproj|solutionrelative:battlesetting_part2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B9A28BD-F726-4D72-BABB-7A296F3914B3}|FleetComander_Console.csproj|C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Ed\\FleetCommander_Console\\battlesetting_part1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2B9A28BD-F726-4D72-BABB-7A296F3914B3}|FleetComander_Console.csproj|C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\ED\\FleetComander_Console\\battlesetting_part1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B9A28BD-F726-4D72-BABB-7A296F3914B3}|FleetComander_Console.csproj|solutionrelative:battlesetting_part1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2B9A28BD-F726-4D72-BABB-7A296F3914B3}|FleetComander_Console.csproj|c:\\users\\aruen\\onedrive\\\uBC14\uD0D5 \uD654\uBA74\\ed\\fleetcommander_console\\filename.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B9A28BD-F726-4D72-BABB-7A296F3914B3}|FleetComander_Console.csproj|solutionrelative:filename.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2B9A28BD-F726-4D72-BABB-7A296F3914B3}|FleetComander_Console.csproj|C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\ED\\FleetComander_Console\\battlesetting_part2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B9A28BD-F726-4D72-BABB-7A296F3914B3}|FleetComander_Console.csproj|solutionrelative:battlesetting_part2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2B9A28BD-F726-4D72-BABB-7A296F3914B3}|FleetComander_Console.csproj|C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Ed\\FleetCommander_Console\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2B9A28BD-F726-4D72-BABB-7A296F3914B3}|FleetComander_Console.csproj|C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\ED\\FleetComander_Console\\playsequence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B9A28BD-F726-4D72-BABB-7A296F3914B3}|FleetComander_Console.csproj|solutionrelative:playsequence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B9A28BD-F726-4D72-BABB-7A296F3914B3}|FleetComander_Console.csproj|C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\ED\\FleetComander_Console\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B9A28BD-F726-4D72-BABB-7A296F3914B3}|FleetComander_Console.csproj|solutionrelative:mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B9A28BD-F726-4D72-BABB-7A296F3914B3}|FleetComander_Console.csproj|C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\ED\\FleetComander_Console\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B9A28BD-F726-4D72-BABB-7A296F3914B3}|FleetComander_Console.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B9A28BD-F726-4D72-BABB-7A296F3914B3}|FleetComander_Console.csproj|C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\ED\\FleetComander_Console\\shopsetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B9A28BD-F726-4D72-BABB-7A296F3914B3}|FleetComander_Console.csproj|solutionrelative:shopsetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B9A28BD-F726-4D72-BABB-7A296F3914B3}|FleetComander_Console.csproj|C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\ED\\FleetComander_Console\\gameinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B9A28BD-F726-4D72-BABB-7A296F3914B3}|FleetComander_Console.csproj|solutionrelative:gameinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,91 +54,90 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "FileName.cs",
-              "DocumentMoniker": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Ed\\FleetCommander_Console\\FileName.cs",
-              "RelativeDocumentMoniker": "FileName.cs",
-              "ToolTip": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Ed\\FleetCommander_Console\\FileName.cs",
-              "RelativeToolTip": "FileName.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-26T14:45:56.29Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "BattleSetting_Part2.cs",
-              "DocumentMoniker": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Ed\\FleetCommander_Console\\BattleSetting_Part2.cs",
+              "DocumentMoniker": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\ED\\FleetComander_Console\\BattleSetting_Part2.cs",
               "RelativeDocumentMoniker": "BattleSetting_Part2.cs",
-              "ToolTip": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Ed\\FleetCommander_Console\\BattleSetting_Part2.cs",
+              "ToolTip": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\ED\\FleetComander_Console\\BattleSetting_Part2.cs",
               "RelativeToolTip": "BattleSetting_Part2.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAPfLEYI4YwFEAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-26T12:37:26.218Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "BattleSetting_Part1.cs",
-              "DocumentMoniker": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Ed\\FleetCommander_Console\\BattleSetting_Part1.cs",
+              "DocumentMoniker": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\ED\\FleetComander_Console\\BattleSetting_Part1.cs",
               "RelativeDocumentMoniker": "BattleSetting_Part1.cs",
-              "ToolTip": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Ed\\FleetCommander_Console\\BattleSetting_Part1.cs",
+              "ToolTip": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\ED\\FleetComander_Console\\BattleSetting_Part1.cs",
               "RelativeToolTip": "BattleSetting_Part1.cs",
-              "ViewState": "AgIAABUCAAAAAAAAAAAAAEMCAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFMBAADoA4uZx20wwGUBAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-26T12:37:26.352Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Ed\\FleetCommander_Console\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\ED\\FleetComander_Console\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Ed\\FleetCommander_Console\\Program.cs",
+              "ToolTip": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\ED\\FleetComander_Console\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-26T12:37:26.349Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "ShopSetting.cs",
-              "DocumentMoniker": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Ed\\FleetCommander_Console\\ShopSetting.cs",
+              "DocumentMoniker": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\ED\\FleetComander_Console\\ShopSetting.cs",
               "RelativeDocumentMoniker": "ShopSetting.cs",
-              "ToolTip": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Ed\\FleetCommander_Console\\ShopSetting.cs",
+              "ToolTip": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\ED\\FleetComander_Console\\ShopSetting.cs",
               "RelativeToolTip": "ShopSetting.cs",
-              "ViewState": "AgIAABkAAAAArrUubrMowFcAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAyhgSB0EQwB8AAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-26T12:37:26.351Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "GameInfo.cs",
-              "DocumentMoniker": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Ed\\FleetCommander_Console\\GameInfo.cs",
+              "DocumentMoniker": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\ED\\FleetComander_Console\\GameInfo.cs",
               "RelativeDocumentMoniker": "GameInfo.cs",
-              "ToolTip": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Ed\\FleetCommander_Console\\GameInfo.cs",
+              "ToolTip": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\ED\\FleetComander_Console\\GameInfo.cs",
               "RelativeToolTip": "GameInfo.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwCIAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAgxDivK0HwCMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-26T12:37:26.352Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PlaySequence.cs",
+              "DocumentMoniker": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\ED\\FleetComander_Console\\PlaySequence.cs",
+              "RelativeDocumentMoniker": "PlaySequence.cs",
+              "ToolTip": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\ED\\FleetComander_Console\\PlaySequence.cs",
+              "RelativeToolTip": "PlaySequence.cs",
+              "ViewState": "AgIAABoAAADAVFWlVdcrwDQAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-26T12:37:26.352Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PlaySequence.cs",
-              "DocumentMoniker": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Ed\\FleetCommander_Console\\PlaySequence.cs",
-              "RelativeDocumentMoniker": "PlaySequence.cs",
-              "ToolTip": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Ed\\FleetCommander_Console\\PlaySequence.cs",
-              "RelativeToolTip": "PlaySequence.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAAtAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "MainMenu.cs",
+              "DocumentMoniker": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\ED\\FleetComander_Console\\MainMenu.cs",
+              "RelativeDocumentMoniker": "MainMenu.cs",
+              "ToolTip": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\ED\\FleetComander_Console\\MainMenu.cs",
+              "RelativeToolTip": "MainMenu.cs",
+              "ViewState": "AgIAAB8AAAAAIoQQ5i8QwDYAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-26T12:37:26.352Z",
               "EditorCaption": ""
@@ -150,25 +145,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MainMenu.cs",
-              "DocumentMoniker": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Ed\\FleetCommander_Console\\MainMenu.cs",
-              "RelativeDocumentMoniker": "MainMenu.cs",
-              "ToolTip": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Ed\\FleetCommander_Console\\MainMenu.cs",
-              "RelativeToolTip": "MainMenu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-26T12:37:26.352Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "ConsoleUiSetting.cs",
-              "DocumentMoniker": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Ed\\FleetCommander_Console\\ConsoleUiSetting.cs",
+              "DocumentMoniker": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\ED\\FleetComander_Console\\ConsoleUiSetting.cs",
               "RelativeDocumentMoniker": "ConsoleUiSetting.cs",
-              "ToolTip": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Ed\\FleetCommander_Console\\ConsoleUiSetting.cs",
+              "ToolTip": "C:\\Users\\aruen\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\ED\\FleetComander_Console\\ConsoleUiSetting.cs",
               "RelativeToolTip": "ConsoleUiSetting.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAA3wDQAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAA3HBDmQonwMQAAAB2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-26T12:37:26.354Z",
               "EditorCaption": ""
