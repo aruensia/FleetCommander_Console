@@ -17,17 +17,11 @@ namespace FleetComander_Console
             {
                 battleInfo.userFirst = true;
                 BattleEngage(battleInfo.userFirst);
-                //Console.WriteLine($"현재 턴 {trun}");
-                //Console.WriteLine("----- 유저 차례-----");
-                //Console.WriteLine(battleInfo.userFirst);
                 battleOverCheck = GameInfo.battleFleets.FleetAttack(battleInfo);
                 SaveBattleResult(battleInfo.userFirst);
 
-                //Console.WriteLine();
-                //Console.WriteLine("----- 적 차례-----");
                 battleInfo.userFirst = false;
                 BattleEngage(battleInfo.userFirst);
-                //Console.WriteLine(battleInfo.userFirst);
                 battleOverCheck = GameInfo.battleFleets.FleetAttack(battleInfo);
                 SaveBattleResult(battleInfo.userFirst);
 
@@ -39,8 +33,6 @@ namespace FleetComander_Console
                 }
 
                 trun++;
-                //Console.WriteLine("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ턴 종료ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ");
-
                 if (battleOverCheck == true)
                 {
                     break;

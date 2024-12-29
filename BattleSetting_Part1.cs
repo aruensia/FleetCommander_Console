@@ -131,7 +131,6 @@ namespace FleetComander_Console
             set { _battleshipAttackChance = value; }
         }
         #endregion
-
         public abstract void Skill(int attack, int defence);
     }
 
@@ -148,7 +147,7 @@ namespace FleetComander_Console
 
         public override void Skill(int increseattack, int defence)
         {
-            Console.WriteLine("스킬을 사용 했다.");
+            //Console.WriteLine("스킬을 사용 했다.");
         }
     }
 
@@ -168,7 +167,7 @@ namespace FleetComander_Console
 
         void UseSwgWeapon()
         {
-            Console.WriteLine("순양함 스킬 썼다");
+            //Console.WriteLine("순양함 스킬 썼다");
         }
     }
 
@@ -199,23 +198,23 @@ namespace FleetComander_Console
                     UseMissileWeapon();
                     break;
                 case 4:
-                    Console.WriteLine("스킬을 사용하지 않았다.");
+                    //Console.WriteLine("스킬을 사용하지 않았다.");
                     break;
             }
 
             void UseBeamWeapon()
             {
-                Console.WriteLine("전함 스킬 썼다");
+                //Console.WriteLine("전함 스킬 썼다");
             }
 
             void UseEpicWeapon()
             {
-                Console.WriteLine("전함 스킬 썼다");
+                //Console.WriteLine("전함 스킬 썼다");
             }
 
             void UseMissileWeapon()
             {
-                Console.WriteLine("전함 스킬 썼다");
+                //Console.WriteLine("전함 스킬 썼다");
             }
         }
     }

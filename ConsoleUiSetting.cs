@@ -63,11 +63,6 @@ namespace FleetComander_Console
             Console.SetCursorPosition(0, 0);
         }
 
-        public void StartCursorPosition()
-        {
-
-        }
-
         public void StartTitle()
         {
             Console.SetCursorPosition(0, 0);
@@ -163,7 +158,7 @@ namespace FleetComander_Console
             Console.WriteLine($"   구축함 : {GameInfo.playerFleet[0].UnitCount} 대 | 순양함 : {GameInfo.playerFleet[1].UnitCount} 대 | 전 함 : {GameInfo.playerFleet[2].UnitCount} 대                                                                                          ");
             Console.WriteLine($"│                                                                                                          │");
             Console.WriteLine($"│ 정보를 보고 싶은 함선을 선택하세요                                                                       │");
-            Console.WriteLine("│  1 : 구축함 | 2 : 순양함 | 3 : 전함                                                                      │");
+            Console.WriteLine("│  1 : 구축함 | 2 : 순양함 | 3 : 전함 | 4 : 나가기                                                         │");
             Console.WriteLine("│                                                                                                          │");
             Console.WriteLine("│                                                                                                          │");
             Console.WriteLine("│                                                                                                          │");
@@ -338,7 +333,7 @@ namespace FleetComander_Console
                 Console.WriteLine($"│  함선 공격력 : {GameInfo.playerFleet[1].Attack}                                                                                        │");
                 Console.WriteLine($"│  함선 방어력 : {GameInfo.playerFleet[1].Defence}                                                                                         │");
                 Console.WriteLine($"│  함선 체력 : {GameInfo.playerFleet[1].Hp}                                                                                         │");
-                Console.WriteLine($"│  함선 설명 : 적의 공격을 대신 맞으면서 지속적으로 피해를 입히는 소형 함선입니다.                         │");
+                Console.WriteLine($"│  함선 설명 : 적의 공격을 대신 맞으면서 지속적으로 피해를 입히는 중형 함선입니다.                         │");
                 Console.WriteLine($"│                                                                                                          │");
                 Console.WriteLine($"│                                                                                                          │");
                 Console.WriteLine($"│                                                                                                          │");
@@ -355,7 +350,7 @@ namespace FleetComander_Console
                 Console.WriteLine($"│  함선 공격력 : {GameInfo.playerFleet[2].Attack}                                                                                       │");
                 Console.WriteLine($"│  함선 방어력 : {GameInfo.playerFleet[2].Defence}                                                                                        │");
                 Console.WriteLine($"│  함선 체력 : {GameInfo.playerFleet[2].Hp}                                                                                        │");
-                Console.WriteLine($"│  함선 설명 : 적의 공격을 대신 맞으면서 지속적으로 피해를 입히는 소형 함선입니다.                         │");
+                Console.WriteLine($"│  함선 설명 : 적의 공격에게 강한 피해를 입히는 대형 함선입니다.                                           │");
                 Console.WriteLine($"│                                                                                                          │");
                 Console.WriteLine($"│                                                                                                          │");
                 Console.WriteLine($"│                                                                                                          │");
